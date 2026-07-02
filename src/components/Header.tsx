@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Globe, Mail, Phone, ArrowRight, Menu, X } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/src/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "@/src/i18n/navigation";
 import { LogoMark } from "./LogoMark";
 
 const NAV_PAGES = ["servicios", "rutas", "horario", "flota", "nosotros", "contacto"] as const;
@@ -19,7 +19,6 @@ export function Header({
   const common = useTranslations("common");
   const pathname = usePathname();
   const currentPage = pathname === "/" || pathname === "" ? "home" : pathname.split("/")[1] || "home";
-  const router = useRouter();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -33,12 +32,10 @@ export function Header({
   const isHome = currentPage === "home";
   const solidNav = scrolled || !isHome;
 
-  const segments = pathname.split("/").filter(Boolean);
-  const currentLocale = segments[0] || "es";
+  const currentLocale = useLocale();
 
   const switchLocale = (locale: string) => {
-    const rest = segments.slice(1).join("/");
-    router.push(`/${rest || ""}`, { locale });
+    window.location.href = `/${locale}${pathname}`;
   };
 
   return (

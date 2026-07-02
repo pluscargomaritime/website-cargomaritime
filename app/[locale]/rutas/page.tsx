@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { MapPin, Ship, Download, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/src/i18n/navigation";
@@ -9,7 +8,6 @@ import { Header } from "@/src/components/Header";
 import { Footer } from "@/src/components/Footer";
 import { QuoteModal } from "@/src/components/QuoteModal";
 import { Kicker } from "@/src/components/Kicker";
-import { PillBtn } from "@/src/components/PillBtn";
 
 const ROUTES: Record<string, string> = {
   home: "/", servicios: "/servicios", rutas: "/rutas",
