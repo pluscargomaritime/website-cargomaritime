@@ -1,0 +1,16 @@
+diff --git a/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js b/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js
+index 9701b04..174a612 100644
+--- a/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js
++++ b/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js
+@@ -165,6 +165,11 @@ File ${serverPath} does not exist
+     if (existsSync(path.join(dotNextDir, MIDDLEWARE_TRACE_FILE))) {
+         // We still need to copy the nft.json file so that computeCopyFilesForPage doesn't throw
+         copyFileAndMakeOwnerWritable(path.join(dotNextDir, MIDDLEWARE_TRACE_FILE), path.join(standaloneNextDir, MIDDLEWARE_TRACE_FILE));
++        // Next.js 16 doesn't include middleware.js in standalone output — copy it manually
++        const middlewareSrc = path.join(dotNextDir, "server/middleware.js");
++        if (existsSync(middlewareSrc)) {
++            copyFileAndMakeOwnerWritable(middlewareSrc, path.join(standaloneNextDir, "server/middleware.js"));
++        }
+         computeCopyFilesForPage("middleware");
+         logger.debug("Adding node middleware trace files");
+     }

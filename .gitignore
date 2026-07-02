@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloudflare
+.open-next/
+.wrangler/
+
+# patch-package patches (tracked via git, not in .gitignore)
+# patches/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
