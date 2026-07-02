@@ -141,10 +141,10 @@ export function Footer({ onNavigate }: { onNavigate: (page: string) => void }) {
             </div>
             <div className="mt-6 space-y-2 text-sm text-white/65">
               <p className="flex items-center gap-2">
-                <Mail size={13} className="text-primary" /> info@cargomaritime.com
+                <Mail size={13} className="text-primary" /> info@pluscargomaritime.com
               </p>
               <p className="flex items-center gap-2">
-                <Phone size={13} className="text-primary" /> +34 XXX XXX XXX
+                <Phone size={13} className="text-primary" /> +34 610 781 452
               </p>
             </div>
           </div>

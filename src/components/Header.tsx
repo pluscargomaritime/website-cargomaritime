@@ -47,10 +47,10 @@ export function Header({
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-9 text-xs text-white/75">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">
-              <Mail size={11} /> info@cargomaritime.com
+              <Mail size={11} /> info@pluscargomaritime.com
             </span>
             <span className="hidden sm:flex items-center gap-1.5">
-              <Phone size={11} /> +34 XXX XXX XXX
+              <Phone size={11} /> +34 610 781 452
             </span>
           </div>
           <div className="flex items-center gap-2">
