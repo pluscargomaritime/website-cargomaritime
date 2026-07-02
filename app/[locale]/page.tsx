@@ -170,8 +170,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc) => (
               <div key={svc.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
-                <div className="h-44 overflow-hidden">
-                  <Image src={svc.img} alt={svc.title} width={400} height={200} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-44 overflow-hidden relative">
+                  <Image src={svc.img} alt={svc.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold mb-2 text-ink">{svc.title}</h3>

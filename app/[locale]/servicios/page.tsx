@@ -80,8 +80,8 @@ export default function ServiciosPage() {
             {services.map((svc) => (
               <div key={svc.title} className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="h-52 overflow-hidden relative">
-                  <Image src={svc.img} alt={svc.title} width={600} height={300} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <Image src={svc.img} alt={svc.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                   <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl flex items-center justify-center bg-primary">
                     <svc.icon size={20} className="text-white" />
                   </div>

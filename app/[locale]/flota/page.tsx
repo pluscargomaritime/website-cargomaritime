@@ -51,8 +51,8 @@ export default function FlotaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {vessels.map((vessel) => (
               <div key={vessel.name} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="h-52 overflow-hidden">
-                  <Image src={vessel.img} alt={vessel.name} width={400} height={300} className="w-full h-full object-cover" />
+                <div className="h-52 overflow-hidden relative">
+                  <Image src={vessel.img} alt={vessel.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold mb-4 font-heading text-ink">{vessel.name}</h3>
