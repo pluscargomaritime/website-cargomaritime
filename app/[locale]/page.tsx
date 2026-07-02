@@ -42,19 +42,19 @@ export default function HomePage() {
 
   const routes = [
     {
-      corridor: "Iberia – Caribe",
-      ports: ["Vigo", "Bilbao", "Lisboa"],
-      dest: ["Cartagena de Indias", "San Juan PR", "República Dom."],
+      corridor: "Europa – Caribe",
+      ports: ["Valencia, España", "Barcelona, España", "Porto, Portugal"],
+      dest: ["Cartagena, Colombia", "Santa Marta, Colombia", "La Guaira, Venezuela", "Río Haina, Rep. Dominicana"],
     },
     {
-      corridor: "Iberia – Centroamérica",
-      ports: ["Vigo", "Bilbao"],
-      dest: ["Puerto Quetzal", "Puerto Cortés", "Limón"],
+      corridor: "Europa – Centroamérica",
+      ports: ["Valencia, España", "Barcelona, España"],
+      dest: ["Colón, Panamá", "Puerto Progreso, México", "La Habana, Cuba"],
     },
     {
-      corridor: "Iberia – Brasil",
-      ports: ["Vigo", "Lisboa"],
-      dest: ["Santos", "Rio de Janeiro", "Paranaguá"],
+      corridor: "Europa – Sudamérica",
+      ports: ["Valencia, España", "Barcelona, España", "Porto, Portugal"],
+      dest: ["Guayana Francesa", "Santos, Brasil"],
     },
   ];
 

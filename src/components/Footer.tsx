@@ -1,9 +1,12 @@
 "use client";
 
-import { ChevronRight, Globe as GlobeIcon, ExternalLink, Share2, Mail, Phone, Send } from "lucide-react";
+import { ChevronRight, Share2, Mail, Phone, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LogoMark } from "./LogoMark";
 import { CookieBanner } from "./CookieBanner";
+import { LinkedIn } from "./social/LinkedIn";
+import { Instagram } from "./social/Instagram";
+import { WhatsApp } from "./social/WhatsApp";
 
 export function Footer({ onNavigate }: { onNavigate: (page: string) => void }) {
   const t = useTranslations("common");
@@ -38,15 +41,48 @@ export function Footer({ onNavigate }: { onNavigate: (page: string) => void }) {
               de Brasil para fortalecer tu cadena de suministro.
             </p>
             <div className="flex gap-3 mt-5">
-              {[GlobeIcon, ExternalLink, Share2].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center transition-colors hover:bg-primary"
-                >
-                  <Icon size={14} />
-                </a>
-              ))}
+              <a
+                aria-label="LinkedIn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center transition-colors hover:bg-primary"
+              >
+                <LinkedIn className="w-4 h-4 text-white" />
+              </a>
+              <a
+                aria-label="Instagram"
+                href="https://www.instagram.com/pluscargomaritime?igsh=aXdmNDJ5aXI0aHRu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center transition-colors hover:bg-primary"
+              >
+                <Instagram className="w-4 h-4 text-white" />
+              </a>
+              <a
+                aria-label="WhatsApp"
+                href="https://wa.me/34610781452"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center transition-colors hover:bg-primary"
+              >
+                <WhatsApp className="w-4 h-4 text-white" />
+              </a>
+              <button
+                aria-label="Compartir"
+                onClick={() => {
+                  const url = window.location.href;
+                  if (navigator.share) {
+                    navigator.share({ title: "Cargo Maritime", url });
+                  } else {
+                    navigator.clipboard.writeText(url);
+                    alert("Enlace copiado al portapapeles");
+                  }
+                }}
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center transition-colors hover:bg-primary"
+              >
+                <Share2 size={14} />
+              </button>
             </div>
           </div>
 

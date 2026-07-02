@@ -48,6 +48,12 @@ export default function RutasPage() {
       origin: t.raw("originPorts3") as string[],
       dest: t.raw("destPorts3") as string[],
     },
+    {
+      label: t("corridor4"),
+      freq: t("corridor4Freq"),
+      origin: t.raw("originPorts4") as string[],
+      dest: t.raw("destPorts4") as string[],
+    },
   ];
 
   const docs = [t("doc1"), t("doc2"), t("doc3"), t("doc4")];
