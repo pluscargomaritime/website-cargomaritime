@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { ReactNode } from "react";
+import CustomCursor from "@/src/components/CustomCursor";
 
 type Props = {
   children: ReactNode;
@@ -21,6 +22,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <CustomCursor />
       {children}
     </NextIntlClientProvider>
   );
