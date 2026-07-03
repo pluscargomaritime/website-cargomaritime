@@ -8,7 +8,7 @@ export function QuoteModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="absolute inset-0 backdrop-blur-sm" style={{ background: "var(--color-ink)" }} />
+      <div className="absolute inset-0 backdrop-blur-sm" style={{ background: "rgba(18,18,18,0.75)" }} />
       <div
         className="relative bg-white rounded-2xl w-full max-w-lg p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
